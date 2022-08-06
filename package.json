@@ -4,12 +4,12 @@
   "description": "[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lcopeland001/weekend-sql-to-do-list.git",
-    "start": "nodemon server/server.js"
+    "url": "git+https://github.com/lcopeland001/weekend-sql-to-do-list.git"
   },
   "keywords": [],
   "author": "",
