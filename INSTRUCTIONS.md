@@ -2,23 +2,24 @@
 ## Weekend Challenge: SQL To-Do List
 
 TASK
-[] Folder set up
+[] Complete Folder set up
 [] Add a `.git ignore` file
-[] `npm init --yes` and `npm install express`
+[] preform `npm init --yes` and `npm install express`
 [] Add start script to 'pakage.json'
 [] Create an express server that listens on a port
-[] Add HTML to index.HTML and TEST (`npm start`) to make sure it displays on localhost:PORT
+[] Add HTML to index.HTML 
+[] TEST (`npm start`) to make sure it displays on localhost:PORT
 
-[] todo input value
-[] submit button - button, click handler
-[] delete button - button, click handler, and function
-[] complete check box - button, click handler, and function (boolean)
-[] List in index
+[] Create todo input value
+[] Create submit button (button and click handler)
+[] Create delete button (button, click handler, and function)
+[] Create 'complete' check box (button, click handler, and function (boolean))
+[] Create List in index
 [] POST client side, put in an object
-[] POST server side, Math equation
+[] POST server side
 [] GET server
 [] GET client, send to the DOM
-[] CSS
+[] Complete CSS
 
 Hello Primers! 
 
