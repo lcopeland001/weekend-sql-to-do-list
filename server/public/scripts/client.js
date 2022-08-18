@@ -5,6 +5,7 @@ $(readyNow);
 function readyNow() {
     console.log('ready Now');
     $('#submit-task').on('click', sendTask)
+    
 };
 
 let completBox = boxCheck()
@@ -21,7 +22,24 @@ function boxCheck() {
 
 // GET from server 
 function getTask() {
-
+    console.log('In GET');
+    $.ajax({
+        type: 'GET',
+        url: '/task'
+    }).then(function (response){
+        console.log(response);
+        $('#task-table').empty();
+        for(let input of response) {
+            $('#task-table').append(`
+            <tr>
+            <td>${input.task}</td>
+            <td>Complete Box</td>
+            <td>
+                <button class="delete-button">DELETE</button>
+            </td>
+            `)
+        }
+    })
 }
 
 

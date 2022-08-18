@@ -13,7 +13,7 @@ TASK
 [x] Create todo input value
 [x] Create submit button
   [x]button
-  []click handler
+  [x]click handler
 [] Create delete button 
   [x]button
   []click handler
@@ -23,8 +23,8 @@ TASK
   []click handler
   []function(boolean)
 [] Create List in index
-[] POST client side, put in an object
-[] POST server side
+[x] POST client side, put in an object
+[x] POST server side
 [x] GET server
 [x] GET client, send to the DOM
 [] Complete CSS
