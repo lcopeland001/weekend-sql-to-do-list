@@ -4,15 +4,9 @@ $(readyNow);
 
 function readyNow() {
     console.log('ready Now');
-    $('#submit-task').on('click', sendTask)
-    
+    $('#submit-task').on('click', sendTask); 
+    getTask();
 };
-
-let completBox = boxCheck()
-
-function boxCheck() {
-    console.log('in boxCheck');
-} // end boxCheck
 
 // Complete box
 
@@ -27,36 +21,41 @@ function getTask() {
         type: 'GET',
         url: '/task'
     }).then(function (response){
-        console.log(response);
+        console.log('get response',response);
         $('#task-table').empty();
         for(let input of response) {
             $('#task-table').append(`
             <tr>
             <td>${input.task}</td>
-            <td>Complete Box</td>
+            <td>${input.complete}</td>
             <td>
-                <button class="delete-button">DELETE</button>
+                <button class="artist-delete" data-id="${input.id}">Delete</button>
             </td>
-            `)
+        </tr>
+            `);
         }
-    })
-}
+    }).catch(function (error) {
+        console.log('Error',error);
+        alert('Something went wrong!');
+    });
+} // end getTask
 
 
 // POST to server 
 function sendTask() {
     console.log('in sendTask');
     $.ajax({
-        task: 'POST',
+        type: 'POST',
         url: '/task',
         data: {
             task: $('#task-input').val(),
-            complete: false 
+            complete: 'false' 
         }
     }).then(function (response) {
         console.log(response);
+        getTask();
     }).catch(function (error) {
         console.log('Error', error);
         alert('Something is wrong!');
-    })
+    });
 } // end sendTask

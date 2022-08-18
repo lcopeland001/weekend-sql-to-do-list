@@ -25,7 +25,7 @@ if (process.env.DATABASE_URL) {
     config = {
         host: 'localhost', // 127.0.0.1
         port: 5432,
-        database: 'jazzy_pg', // CHANGE THIS LINE to match your local database name!
+        database: 'sql_to_do_list', // CHANGE THIS LINE to match your local database name!
     };
 }
 

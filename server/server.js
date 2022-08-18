@@ -1,11 +1,13 @@
 const express = require('express');
+
 const app = express();
 const bodyParser = require('body-parser');
 const port = 5002;
-const taskRouter = require('./routes/task.router.js');
 
 app.use(express.static('server/public'));
 app.use(express.urlencoded({ extended: true }));
+
+const taskRouter = require('./routes/task.router.js');
 app.use('/task', taskRouter);
 
 

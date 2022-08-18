@@ -16,8 +16,9 @@ TASK
   [x]click handler
 [] Create delete button 
   [x]button
-  []click handler
   []function
+  []click handler
+  [] delete in router
 [] Create 'complete' check box 
   []box
   []click handler
