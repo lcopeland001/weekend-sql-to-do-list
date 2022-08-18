@@ -5,7 +5,7 @@ const port = 5002;
 const taskRouter = require('./routes/task.router.js');
 
 app.use(express.static('server/public'));
-app.use(bodyParser.urlencoded({extended: true})); // What does this mean?
+app.use(express.urlencoded({ extended: true }));
 app.use('/task', taskRouter);
 
 
