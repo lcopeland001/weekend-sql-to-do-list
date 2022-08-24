@@ -10,16 +10,16 @@ const pool = require('../modules/pool.js');
 //GET
 taskRouter.get('/', (req, res) =>{
         console.log('in GET/task');
-        let x = document.getElementById("check-box");
+        // let x = document.getElementById("check-box");
         const queryText = 'SELECT * FROM "task";';
         pool.query(queryText).then((result) => {
                 console.log('SELESCT SUCCESS', result);
                 res.send(result.rows);
-                if (result.checkBox == false) {
-                        x.checked= true;
-                }else if (result.checkBox == true) {
-                        x.checked = true
-                }
+                // if (result.checkBox == false) {
+                //         x.checked= true;
+                // }else if (result.checkBox == true) {
+                //         x.checked = true
+                // } This goes on the client
         }).catch ((error) => {
                 console.log('Error in GET / task', error);
                 res.sendStatus(500);
@@ -34,6 +34,7 @@ taskRouter.post('/', (req, res) => {
         pool.query(queryText, [input.task, input.complete])
         .then((results) => {
                 console.log(results);
+                res.sendStatus(200) // tells the client it was succesful
         }).catch((error) => {
                 console.log('Error in POST / task', error);
                 res.sendStatus(500);
@@ -43,7 +44,7 @@ taskRouter.post('/', (req, res) => {
 //DELETE
 taskRouter.delete('/:id', (req, res) => {
         console.log('in DELETE /task');
-        const queryText = 'DELETE * FROM "task" WHERE "ID" = $1;';
+        const queryText = 'DELETE FROM "task" WHERE "id" = $1;';
         pool.query(queryText, [req.params.id])
         .then((results) => {
                 res.sendStatus(200);

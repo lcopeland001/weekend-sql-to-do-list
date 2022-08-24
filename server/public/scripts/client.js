@@ -12,12 +12,12 @@ function readyNow() {
 // Complete box
 function checkBox() {
     console.log('in checkBox');
-    let x = document.getElementById("check-box");
-    if result
-    x.checked = true;
-    if (x) {
-        return true
-    }
+    // let x = document.getElementById("check-box");
+    // if result
+    // x.checked = true;
+    // if (x) {
+    //     return true
+    // }
     console.log('is check box checked?', x);
 
 }// end checkBox
@@ -52,7 +52,7 @@ function getTask() {
             $('#task-table').append(`
             <tr>
             <td>${input.task}</td>
-            <td><input type="checkbox" id="check-box></td>
+            <td><input type="checkbox" id="check-box"/></td>
             <td>
                 <button class="task-delete" data-id="${input.id}">Delete</button>
             </td>
